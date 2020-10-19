@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./App.css";
 
 //UTILITIES
@@ -15,6 +15,15 @@ const App = () => {
   //STORE DATA -> redux/reducer.js
   const todos = useSelector(state => state.todos);
   const dispatch = useDispatch();
+
+
+  useEffect( () => {
+    localStorage.getItem('todos',JSON.stringify(todos))
+    dispatch({
+      type:'ADD_TODO',
+      payload:JSON.parse(localStorage.getItem('todos'))
+    });
+  },[]);
 
   
 
@@ -35,11 +44,11 @@ const App = () => {
   return (
     <div className="app">
       
-      <Header todosLength={todos.length}/>
+      <Header todosLength={todos}/>
 
       <Form />
 
-      { !todos.length 
+      { !todos
 
         ? <h4>Ooops no todos found..</h4> 
 

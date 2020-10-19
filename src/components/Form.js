@@ -19,27 +19,27 @@ const Form = () => {
     }
 
     if (localStorage.getItem('todos') === null){
-        const tempTodos = [];
-        const tempStorage = [...tempTodos, { name:inputValue, data: new Date() }];
-        localStorage.setItem('todos',JSON.stringify(tempStorage));
+      const tempTodos = [];
+      const tempStorage = [...tempTodos, { name:inputValue, data: new Date() }];
+      localStorage.setItem('todos',JSON.stringify(tempStorage));
 
-        dispatch({
-          type:'ADD_TODO',
-          payload:JSON.parse(localStorage.getItem('todos'))
-        });
+      dispatch({
+        type:'ADD_TODO',
+        payload:JSON.parse(localStorage.getItem('todos'))
+      });
 
-    }else{
-      
-        const tempTodos = JSON.parse(localStorage.getItem('todos'));
-        const tempStorage = [...tempTodos, { name:inputValue, data: new Date() }];
-        localStorage.setItem('todos',JSON.stringify(tempStorage));
+  }else{
+    
+      const tempTodos = JSON.parse(localStorage.getItem('todos'));
+      const tempStorage = [...tempTodos, { name:inputValue, data: new Date() }];
+      localStorage.setItem('todos',JSON.stringify(tempStorage));
 
-        dispatch({
-          type:'ADD_TODO',
-          payload:JSON.parse(localStorage.getItem('todos'))
-        });
+      dispatch({
+        type:'ADD_TODO',
+        payload:JSON.parse(localStorage.getItem('todos'))
+      });
 
-    }
+  }
 
     setInputValue('');
   }
