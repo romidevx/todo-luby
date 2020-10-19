@@ -44,11 +44,11 @@ const App = () => {
   return (
     <div className="app">
       
-      <Header todosLength={todos}/>
+      <Header todosLength={todos.length }/>
 
       <Form />
 
-      { !todos
+      { !todos.length 
 
         ? <h4>Ooops no todos found..</h4> 
 
