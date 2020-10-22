@@ -9,7 +9,7 @@ h1, p {
   padding:10px 10px;
 }
 
-.app .header h1{
+.app .header h3{
   display:flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@ h1, p {
 
 .app .header img{
   margin-right:15px;
+  height:55px;
 }
 .app h5{
   text-align:left;
@@ -56,12 +57,12 @@ h1, p {
 .form input{
   width:70%;
   padding:10px;
-  border:1px solid #d4d4d4;
+  border:1px solid #d2d1cd;
   outline:none;
 }
 .form button{
   padding:10px;
-  border:1px solid #d4d4d4;
+  border:1px solid #d2d1cd;
   box-shadow:2px 3px 13px rgba(0,0,0,0.1);
   background:#fff;
   outline:none;
@@ -83,5 +84,10 @@ h1, p {
   outline:none;
   transition:all .4s ease;
   cursor: pointer;
+}
+
+.btn-orderTodos:hover{
+  background:#7695ab;
+  color:#fff;
 }
 
